@@ -31,7 +31,9 @@
     "rimraf": "^3.0.0",
     "single-spa": "^4.4.1",
     "single-spa-preact": "^1.0.2",
-    "single-spa-react": "^2.10.4"
+    "single-spa-react": "^2.10.4",
+    "single-spa-vue": "^1.5.4",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -53,6 +55,7 @@
     "style-loader": "^1.0.1",
     "svelte-loader": "^2.13.6",
     "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"

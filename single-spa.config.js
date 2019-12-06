@@ -1,6 +1,6 @@
-import { declareChildApplication, start } from 'single-spa';
+import { registerApplication, start } from 'single-spa';
 
-declareChildApplication(
+registerApplication(
   'login', 
   () => import('./src/login/login.app.js'), 
   (location) => location.pathname === "" || 
@@ -8,7 +8,13 @@ declareChildApplication(
     location.pathname.startsWith('/login')
 );
 
-declareChildApplication('navBar', () => import('./src/navBar/navBar.app.js').then(module => module.navBar), () => true);
+registerApplication('navBar', () => import('./src/navBar/navBar.app.js').then(module => module.navBar), () => true);
+
+registerApplication(
+  'home', 
+  () => import('./src/home/home.app.js'),
+  pathPrefix('/home')
+);
 
 function pathPrefix(prefix) {
   return function(location) {

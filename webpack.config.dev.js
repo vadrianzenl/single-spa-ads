@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 process.env.NODE_ENV = "development";
 
@@ -35,7 +36,12 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.API_URL": JSON.stringify("http://localhost:8000")
     }),
-    new CleanWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: "./index.html",
+      favicon: "./favicon.ico"
+    }),
+    new CleanWebpackPlugin(),
+    new VueLoaderPlugin()
   ],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
