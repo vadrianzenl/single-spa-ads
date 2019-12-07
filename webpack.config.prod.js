@@ -19,7 +19,7 @@ module.exports = {
     'single-spa.config': './single-spa.config.js',
   },
   output: {
-    publicPath: '/build/',
+    publicPath: './',
     filename: "[name].[hash:20].js",
     path: path.resolve(__dirname, 'build'),
   }, 
@@ -33,8 +33,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./index.html",
-      favicon: "./favicon.ico",
+      template: "index.html",
+      favicon: "favicon.ico",
       minify: {
         // see https://github.com/kangax/html-minifier#options-quick-reference
         removeComments: true,
@@ -59,6 +59,10 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
   },
+  node: {
+    fs: 'empty'
+  },
+  externals: [],
   module: {
     rules: [
       {
