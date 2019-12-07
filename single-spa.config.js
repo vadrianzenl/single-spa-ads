@@ -10,13 +10,16 @@ registerApplication(
 
 registerApplication(
   'navBar',
-  () => import('./src/navBar/navBar.app.js').then(module => module.navBar),
+  () => import('./src/components/navBar/navBar.app.js').then(module => module.navBar),
   (location) => location.pathname === "/home"
+    || location.pathname === "/transactions"
+    || location.pathname === "/exchanges"
+    || location.pathname === "/profile"
 );
 
 registerApplication(
   'home', 
-  () => import('./src/home/home.app.js'),
+  () => import('./src/components/home/home.app.js'),
   pathPrefix('/home')
 );
 
