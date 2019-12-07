@@ -37,7 +37,7 @@ registerApplication(
 
 registerApplication(
   'profile', 
-  () => import ('./src/profile/profile.app.js'), 
+  () => import ('./src/components/profile/profile.app.js'),
   pathPrefix('/profile')
 );
 
