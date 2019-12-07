@@ -25,13 +25,13 @@ registerApplication(
 
 registerApplication(
   'transactions', 
-  () => import('./src/transactions/transactions.app.js'),
+  () => import('./src/components/transactions/transactions.app.js'),
   pathPrefix('/transactions')
 );
 
 registerApplication(
   'exchanges', 
-  () => import('./src/exchanges/exchanges.app.js'),
+  () => import('./src/components/exchanges/exchanges.app.js'),
   pathPrefix('/exchanges')
 );
 

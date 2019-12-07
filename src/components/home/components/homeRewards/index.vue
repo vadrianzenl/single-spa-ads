@@ -66,7 +66,6 @@
           this.rewards = rewardsList.filter(reward => reward.reward.commerce.id === newValue);
         });
         this.accountCustomer = this.accounts.find(account => account.commerce.id === newValue);
-        console.log(JSON.stringify(this.accountCustomer))
       }
     },
     methods: {
@@ -86,6 +85,5 @@
 <style type="text/css">
     .container {
         margin-top: 80px;
-        background-image: none;
     }
 </style>

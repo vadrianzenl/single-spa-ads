@@ -42,6 +42,5 @@
 <style type="text/css">
     .container {
         margin-top: 80px;
-        background-image: none;
     }
 </style>

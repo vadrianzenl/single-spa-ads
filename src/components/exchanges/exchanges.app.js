@@ -1,9 +1,9 @@
 import singleSpaSvelte from 'single-spa-svelte';
-import Transactions from './App.svelte';
+import Exchanges from './root.component.svelte';
 
 const svelteLifecycles = singleSpaSvelte({
-    component: Transactions,
-    domElementGetter: () => document.getElementById('transactions'),
+    component: Exchanges,
+    domElementGetter: () => document.getElementById('exchanges'),
     data: {}
   });
   
