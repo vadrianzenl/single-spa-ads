@@ -16,6 +16,24 @@ registerApplication(
   pathPrefix('/home')
 );
 
+registerApplication(
+  'transactions', 
+  () => import('./src/transactions/transactions.app.js'),
+  pathPrefix('/transactions')
+);
+
+registerApplication(
+  'exchanges', 
+  () => import('./src/exchanges/exchanges.app.js'),
+  pathPrefix('/exchanges')
+);
+
+registerApplication(
+  'profile', 
+  () => import ('./src/profile/profile.app.js'), 
+  pathPrefix('/profile')
+);
+
 function pathPrefix(prefix) {
   return function(location) {
       return location.pathname.indexOf(`${prefix}`) === 0;

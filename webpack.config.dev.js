@@ -58,7 +58,7 @@ module.exports = {
         query: preactBabelConfig,
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules|preact|login/,
         loader: 'babel-loader',
         query: getBabelConfig(),
@@ -69,7 +69,7 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /svelte.+\.html$/,
+        test: /\.svelte$/,
         loader: 'svelte-loader',
       },
       {
