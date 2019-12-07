@@ -19,10 +19,13 @@ module.exports = {
     'single-spa.config': './single-spa.config.js',
   },
   output: {
-    publicPath: './',
+    publicPath: '/',
     filename: "[name].[hash:20].js",
     path: path.resolve(__dirname, 'build'),
-  }, 
+  },
+  devServer: {
+    historyApiFallback: true
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css"

@@ -9,7 +9,7 @@
     "clean:build": "rimraf ./build && mkdir build",
     "copy:manifest": "node -e \"require('fs').copyFile('./manifest.yml', './build/manifest.yml', function(err) { if (err) console.log(err); console.log('manifest.yml copied!') })\"",
     "prebuild": "run-p clean:build",
-    "build": "webpack --config webpack.config.prod.js -p",
+    "build": "webpack --config webpack.config.prod.js",
     "postbuild": "run-p copy:manifest serve:build",
     "serve:build": "http-server ./build"
   },
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/vadrianzenl/single-spa-ads/issues"
   },
-  "homepage": "https://github.com/vadrianzenl/single-spa-ads#readme",
+  "homepage": "https://single-spa-ads.cfapps.io",
   "dependencies": {
     "angular": "^1.7.9",
     "angular-ui-router": "^1.0.23",

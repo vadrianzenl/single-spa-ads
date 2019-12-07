@@ -1,6 +1,14 @@
 import React from 'react'
 import {navigateToUrl} from 'single-spa'
+
 const NavBar = () => (
-  <h1>Hello, world React!</h1>
+    <nav>
+        <div className="nav-wrapper">
+            <a href="/" onClick={navigateToUrl} className="brand-logo">single-spa</a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+                <li><a href="/home" onClick={navigateToUrl}>Home</a></li>
+            </ul>
+        </div>
+    </nav>
 )
 export default NavBar
