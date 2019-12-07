@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-.container{
+.contain{
     background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@
     max-width: 100%;
 }
 
-.card{
+.card-login{
     height: auto;
     margin-top: 180px;
     margin-bottom: auto;

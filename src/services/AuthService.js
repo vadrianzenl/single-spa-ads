@@ -7,6 +7,24 @@ class AuthService {
     });
   }
 
+  getCustomerList(username) {
+    return loginApi.getCustomers().then(customers => {
+      const customerInfo = customers.find(customer => customer.user.username === username );
+      console.log(JSON.stringify(customerInfo));
+      if (customerInfo) {
+        this.saveCustomerInfo(customerInfo);
+      }
+    });
+  }
+
+  saveCustomerInfo(customer) {
+    localStorage.setItem("customerInfo", JSON.stringify(customer));
+  }
+
+  getCustomerInfo() {
+    return JSON.parse(localStorage.getItem("customerInfo"));
+  }
+
   saveUserInfo(credentials) {
     localStorage.setItem("userInfo", JSON.stringify(credentials));
   }

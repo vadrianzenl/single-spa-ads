@@ -1,5 +1,8 @@
 import React from 'react'
 import {navigateToUrl} from 'single-spa'
+import AuthService from "services/AuthService";
+
+const customerInfo = AuthService.getCustomerInfo();
 
 const NavBar = () => (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -33,7 +36,7 @@ const NavBar = () => (
           </li>
         </ul>
         <ul className="navbar-nav ml-auto">
-          <span className="navbar-text">Usuario: Admin</span>
+          <span className="navbar-text">Usuario: { customerInfo.full_name }</span>
           <li className="nav-item">
             <a href="/" className="nav-link" onClick={navigateToUrl}>Cerrar Sesión</a>
           </li>

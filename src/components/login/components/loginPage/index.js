@@ -18,7 +18,9 @@ class LoginPage extends Component {
     AuthService
       .logIn(this.state)
       .then(() => {
-        navigateToUrl('/home');
+        AuthService.getCustomerList(this.state.username).then(() => {
+          navigateToUrl('/home');
+        });
       })
       .catch(() => {
         toast.error("User or Password Invalid!");
@@ -26,9 +28,9 @@ class LoginPage extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="contain">
         <div className="d-flex justify-content-center h-100">
-          <div className="card">
+          <div className="card card-login">
             <div className="card-header">
               <h3>Iniciar Sesión</h3>
             </div>

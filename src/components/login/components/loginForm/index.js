@@ -5,7 +5,7 @@ const LoginForm = ({ handleSubmit, onChange }) => (
     <div className="card-body">
       <form onSubmit={handleSubmit}>
         <div className="input-group form-group">
-          <div className="input-group-prepend">
+          <div className="input-group-prepend input-group-prepend-login">
             <span className="input-group-text"><i className="fas fa-user"></i></span>
           </div>
           <input
@@ -17,7 +17,7 @@ const LoginForm = ({ handleSubmit, onChange }) => (
             onChange={onChange}/>
         </div>
         <div className="input-group form-group">
-          <div className="input-group-prepend">
+          <div className="input-group-prepend input-group-prepend-login">
             <span className="input-group-text"><i className="fas fa-key"></i></span>
           </div>
           <input
