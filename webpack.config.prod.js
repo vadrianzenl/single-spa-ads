@@ -29,7 +29,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-      "process.env.API_URL": JSON.stringify("http://localhost:3001")
+      "process.env.API_URL": JSON.stringify("https://django-api.cfapps.io")
     }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -58,6 +58,10 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
+    alias: {
+      api: path.resolve(__dirname, 'src/api/'),
+      services: path.resolve(__dirname, 'src/services/')
+    }
   },
   node: {
     fs: 'empty'
@@ -111,7 +115,8 @@ function getBabelConfig() {
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-proposal-class-properties',
       '@babel/plugin-proposal-object-rest-spread',
-      '@babel/plugin-proposal-function-bind'
+      '@babel/plugin-proposal-function-bind',
+      '@babel/plugin-transform-runtime'
     ],
   };
 }

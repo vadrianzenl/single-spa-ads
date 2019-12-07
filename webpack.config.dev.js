@@ -34,7 +34,7 @@ module.exports = {
   }, 
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify("http://localhost:8000")
+      "process.env.API_URL": JSON.stringify("http://localhost:7000")
     }),
     new HtmlWebpackPlugin({
       template: "./index.html",
@@ -45,6 +45,10 @@ module.exports = {
   ],
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')],
+    alias: {
+      api: path.resolve(__dirname, 'src/api/'),
+      services: path.resolve(__dirname, 'src/services/')
+    }
   },
   module: {
     rules: [
@@ -94,7 +98,8 @@ function getBabelConfig() {
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-proposal-class-properties',
       '@babel/plugin-proposal-object-rest-spread',
-      '@babel/plugin-proposal-function-bind'
+      '@babel/plugin-proposal-function-bind',
+      '@babel/plugin-transform-runtime'
     ],
   };
 }

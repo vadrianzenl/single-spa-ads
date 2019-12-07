@@ -2,13 +2,17 @@ import { registerApplication, start } from 'single-spa';
 
 registerApplication(
   'login', 
-  () => import('./src/login/login.app.js'), 
+  () => import('./src/components/login/login.app.js'),
   (location) => location.pathname === "" || 
     location.pathname === "/" || 
     location.pathname.startsWith('/login')
 );
 
-registerApplication('navBar', () => import('./src/navBar/navBar.app.js').then(module => module.navBar), () => true);
+registerApplication(
+  'navBar',
+  () => import('./src/navBar/navBar.app.js').then(module => module.navBar),
+  (location) => location.pathname === "/home"
+);
 
 registerApplication(
   'home', 

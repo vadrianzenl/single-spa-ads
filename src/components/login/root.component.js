@@ -1,7 +1,8 @@
 import { h, render, Component } from 'preact';
+import LoginPage from './components/loginPage';
 
 export default class App extends Component {
   render() {
-    return <h1>Hello, world Preact!</h1>;
+    return <LoginPage />;
   }
 }
