@@ -1,22 +1,20 @@
-import singleSpaAngularJS from 'single-spa-angularjs';
-import angular from 'angular';
-import './app.module.js';
-import './routes.js';
+import singleSpaSvelte from 'single-spa-svelte';
+import Profile from './root.component.svelte';
 
-const domElementGetter = () => document.getElementById('profile');
-const angularLifecycles = singleSpaAngularJS({
-  angular,
-  domElementGetter,
-  mainAngularModule: 'profile-app',
-  uiRouter: true,
-  preserveGlobal: false,
-})
+const svelteLifecycles = singleSpaSvelte({
+  component: Profile,
+  domElementGetter: () => document.getElementById('profile'),
+  data: {}
+});
+
 export const bootstrap = [
-  angularLifecycles.bootstrap,
+  svelteLifecycles.bootstrap,
 ];
+
 export const mount = [
-  angularLifecycles.mount,
+  svelteLifecycles.mount,
 ];
+
 export const unmount = [
-  angularLifecycles.unmount,
+  svelteLifecycles.unmount,
 ];
