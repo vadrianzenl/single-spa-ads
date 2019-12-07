@@ -23,9 +23,6 @@ module.exports = {
     filename: "[name].[hash:20].js",
     path: path.resolve(__dirname, 'build'),
   },
-  devServer: {
-    historyApiFallback: true
-  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css"
