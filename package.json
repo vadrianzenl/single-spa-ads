@@ -10,7 +10,7 @@
     "copy:manifest": "node -e \"require('fs').copyFile('./manifest.yml', './build/manifest.yml', function(err) { if (err) console.log(err); console.log('manifest.yml copied!') })\"",
     "prebuild": "run-p clean:build",
     "build": "webpack --config webpack.config.prod.js",
-    "postbuild": "run-p copy:manifest serve:build",
+    "postbuild": "run-p copy:manifest",
     "serve:build": "http-server ./build"
   },
   "repository": {
