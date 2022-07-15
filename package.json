@@ -41,7 +41,7 @@
     "single-spa-react": "^2.10.4",
     "single-spa-svelte": "^1.0.1",
     "single-spa-vue": "^1.5.4",
-    "svelte": "^3.16.0",
+    "svelte": "^3.49.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
